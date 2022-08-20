@@ -19,6 +19,8 @@ class CreateAdminsTable extends Migration
             $table->string('hp');
             $table->text('alamat');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

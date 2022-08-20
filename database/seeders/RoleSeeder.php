@@ -69,6 +69,10 @@ class RoleSeeder extends Seeder
         Siswa::create([
             'user_id' => $siswa->id,
             'nama_orangtua' => 'Dede',
+            'nama_lengkap' => 'Bambang',
+            'jenis_kelamin' => 'Laki-laki',
+            'nama_sekolah' => 'SMP 89',
+            'kelas' => '3',
             'hp' => '085123456789',
             'alamat' => 'jl. gajah',
         ]);

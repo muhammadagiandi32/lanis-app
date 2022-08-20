@@ -18,7 +18,11 @@ class CreateTagihansTable extends Migration
             $table->foreignId('id_siswa');
             $table->date('bulan_bayar');
             $table->decimal('total', $precision = 8, $scale = 2);
+            $table->integer('order_id')->nullable();
+            $table->integer('status')->nullable();
             $table->timestamps();
+
+            $table->foreign('id_siswa')->references('id')->on('siswas');
         });
     }
 

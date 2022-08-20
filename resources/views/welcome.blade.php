@@ -150,7 +150,7 @@ License: For each use you must have a valid license purchased only from above li
                         </h1>
                         <!--end::Title-->
                         <!--begin::Action-->
-                        <a href="../../demo1/dist/index.html" class="btn btn-primary">Daftar</a>
+                        <a href="{{ route('daftar') }}" class="btn btn-primary">Daftar</a>
                         <!--end::Action-->
                     </div>
                     <!--end::Heading-->
