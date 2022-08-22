@@ -17,7 +17,7 @@ class CreateSiswasTable extends Migration
         Schema::create('siswas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->nullable();
-            $table->unsignedBigInteger('no_pendaftaran')->nullable();
+            $table->char('no_pendaftaran')->nullable();
             $table->string('hp');
             $table->text('nama_orangtua');
             $table->text('nama_lengkap');
@@ -28,7 +28,6 @@ class CreateSiswasTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('no_pendaftaran')->references('id')->on('pendaftarans');
         });
     }
 

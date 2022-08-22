@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pendaftaran;
+use App\Models\Siswa;
+use App\Models\User;
 use Carbon\Carbon;
 
 class PendaftaranController extends Controller
@@ -17,7 +19,38 @@ class PendaftaranController extends Controller
     {
         $daftar = Pendaftaran::all();
 
+        // return $daftar;
         return view('list-daftar',compact('daftar'));
+    }
+
+    public function status($id)
+    {
+
+        // return $status;
+        $status = Pendaftaran::find($id);
+        $status->status = 0;
+        $status->update();
+
+        $user = new User;
+        $user->name = $status->nama_lengkap;
+        $user->email = $status->email;
+        $user->role_id = 3;
+        $user->password = bcrypt('123123123');
+        $user->save();
+
+        $siswa = new Siswa;
+        $siswa->hp = $status->no_wali;
+        $siswa->no_pendaftaran = $status->no;
+        $siswa->user_id = $user->id;
+        $siswa->nama_lengkap = $status->nama_lengkap;
+        $siswa->nama_orangtua = $status->wali;
+        $siswa->jenis_kelamin = $status->jenis_kelamin;
+        $siswa->nama_sekolah = $status->nama_sekolah;
+        $siswa->kelas = $status->kelas;
+        $siswa->alamat = $status->alamat;
+        $siswa->save();
+
+        return redirect('list-siswa')->with('success', 'Siswa telah aktif');
     }
 
     /**

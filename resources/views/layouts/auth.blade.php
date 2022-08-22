@@ -90,8 +90,8 @@ License: For each use you must have a valid license purchased only from above li
                                 <!--end::Mobile menu toggle-->
                                 <!--begin::Logo image-->
                                 <a href="{{ url('/')}}">
-                                    <img alt="Logo" src="{{ asset('assets/dist/assets/media/logos/logo-landing.svg')}}" class="logo-default h-25px h-lg-30px" />
-                                    <img alt="Logo" src="{{ asset('assets/dist/assets/media/logos/logo-landing-dark.svg')}}" class="logo-sticky h-20px h-lg-25px" />
+                                    <img alt="Logo" src="{{ asset('assets/dist/assets/media/logos/klc.jpeg')}}" class="logo-default h-35px h-lg-40px" />
+                                    <img alt="Logo" src="{{ asset('assets/dist/assets/media/logos/klc.jpeg')}}" class="logo-sticky h-35px h-lg-40px" />
                                 </a>
                                 <!--end::Logo image-->
                             </div>
