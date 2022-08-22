@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pendaftaran;
+use Carbon\Carbon;
 
 class PendaftaranController extends Controller
 {
@@ -13,7 +15,9 @@ class PendaftaranController extends Controller
      */
     public function index()
     {
-        //
+        $daftar = Pendaftaran::all();
+
+        return view('list-daftar',compact('daftar'));
     }
 
     /**
@@ -23,7 +27,26 @@ class PendaftaranController extends Controller
      */
     public function create()
     {
-        return view('daftar');
+
+        // $now = Carbon::now();
+        $thBln = date("m/Y");
+        // $thBln = $now->year.$now->month;
+        
+        $cek = Pendaftaran::count();
+        if ($cek == 0) {
+            $urut = '001';
+            $nomor = 'KLC'.'/'.$urut.'/'.$thBln;
+        }else {
+            $ambil = Pendaftaran::all()->last();
+            $urut = (int)substr($ambil->barcode, -4) + 1;
+            $nomor = 'KLC'.$urut.$thBln;
+        }
+
+
+        // return $nomor;
+
+       
+        return view('daftar',compact('nomor'));
     }
 
     /**
@@ -34,7 +57,14 @@ class PendaftaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return $request;
+        $this->validate($request,[
+            'nama_lengkap' => ['required'],
+        ]);
+
+        Pendaftaran::create($request->all());
+
+        return redirect('/daftar-siswa')->with('success','Selamat Anda berhasil mendaftar!');
     }
 
     /**

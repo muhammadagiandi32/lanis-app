@@ -89,7 +89,7 @@ License: For each use you must have a valid license purchased only from above li
                                 </button>
                                 <!--end::Mobile menu toggle-->
                                 <!--begin::Logo image-->
-                                <a href="/metronic8/demo1/../demo1/landing.html">
+                                <a href="{{ url('/')}}">
                                     <img alt="Logo" src="{{ asset('assets/dist/assets/media/logos/logo-landing.svg')}}" class="logo-default h-25px h-lg-30px" />
                                     <img alt="Logo" src="{{ asset('assets/dist/assets/media/logos/logo-landing-dark.svg')}}" class="logo-sticky h-20px h-lg-25px" />
                                 </a>

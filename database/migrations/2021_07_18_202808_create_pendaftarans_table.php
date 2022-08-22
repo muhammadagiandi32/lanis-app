@@ -15,7 +15,7 @@ class CreatePendaftaransTable extends Migration
     {
         Schema::create('pendaftarans', function (Blueprint $table) {
             $table->id();
-            $table->integer('no')->unique();
+            $table->char('no')->unique();
             $table->string('nama_lengkap');
             $table->string('nama_panggilan');
             $table->string('tempat_lahir');
@@ -26,11 +26,11 @@ class CreatePendaftaransTable extends Migration
             $table->string('nama_sekolah');
             $table->string('kelas');
             $table->string('email')->unique();
-            $table->string('ortu/wali')->nullable();
-            $table->integer('no_wali');
+            $table->string('wali')->nullable();
+            $table->bigInteger('no_wali')->length(12);
             $table->string('alamat');
             $table->enum('keterangan', ['Yatim/Piatu', 'Yatim', 'Piatu', 'Dhuafa', 'Umum']);
-            $table->integer('status');
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }
