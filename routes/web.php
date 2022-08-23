@@ -20,7 +20,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//route pendaftaran
 Route::get('/list-siswa', [App\Http\Controllers\PendaftaranController::class, 'index']);
 Route::get('/status/{id}', [App\Http\Controllers\PendaftaranController::class, 'status'])->name('status');
 Route::get('/daftar-siswa', [App\Http\Controllers\PendaftaranController::class, 'create'])->name('daftar');
 Route::post('/tambah-siswa', [App\Http\Controllers\PendaftaranController::class, 'store'])->name('tambah.siswa');
+
+
+//admin
+Route::resource('/admins', App\Http\Controllers\AdminController::class);
