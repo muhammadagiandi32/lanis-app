@@ -15,8 +15,7 @@ License: For each use you must have a valid license purchased only from above li
 
 <head>
     <base href="../">
-    <title>Metronic - the world's #1 selling Bootstrap Admin Theme Ecosystem for HTML, Vue, React, Angular &amp; Laravel
-        by Keenthemes</title>
+    <title>KLC - Karomah Learning Center</title>
     <meta charset="utf-8" />
     <meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
     <meta name="keywords" content="Metronic, bootstrap, bootstrap 5, Angular, VueJs, React, Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
@@ -55,7 +54,7 @@ License: For each use you must have a valid license purchased only from above li
                 <div class="aside-logo flex-column-auto" id="kt_aside_logo">
                     <!--begin::Logo-->
                     <a href="../../demo13/dist/index.html">
-                        <img alt="Logo" src="{{ asset('assets/dist/assets/media/logos/logo-demo13.svg')}}" class="h-15px logo" />
+                        <img alt="Logo" src="{{ asset('assets/dist/assets/media/logos/klc.jpeg')}}" class="h-30px logo" />
                     </a>
                     <!--end::Logo-->
                     <!--begin::Aside toggler-->
@@ -76,9 +75,10 @@ License: For each use you must have a valid license purchased only from above li
                     <!--begin::Aside Menu-->
                     <div class="hover-scroll-overlay-y my-2 py-5 py-lg-8" id="kt_aside_menu_wrapper" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer" data-kt-scroll-wrappers="#kt_aside_menu" data-kt-scroll-offset="0">
                         <!--begin::Menu-->
+                        @can('ketua')
                         <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true">
                             <div class="menu-item">
-                                <a class="menu-link" href="{{ url('list-siswa') }}">
+                                <a class="menu-link {{request()->is('home') ? 'active' : ''}}" href="{{ url('home') }}">
                                     <span class="menu-icon">
                                         <i class="bi bi-calendar3-event fs-3"></i>
                                     </span>
@@ -92,7 +92,45 @@ License: For each use you must have a valid license purchased only from above li
                             </div>
 
                             <div class="menu-item">
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <a class="menu-link  {{request()->is('admins') ? 'active' : ''}}" href="{{ url('admins') }}">
+                                    <span class="menu-icon">
+                                        <i class="bi bi-calendar3-event fs-3"></i>
+                                    </span>
+                                    <span class="menu-title">Tambah Admin</span>
+                                </a>
+                                <a class="menu-link  {{request()->is('list-bayar') ? 'active' : ''}}" href="{{ url('list-bayar') }}">
+                                    <span class="menu-icon">
+                                        <i class="bi bi-calendar3-event fs-3"></i>
+                                    </span>
+                                    <span class="menu-title">Laporan Pembayaran</span>
+                                </a>
+                                <a class="menu-link  {{request()->is('list-siswa') ? 'active' : ''}}" href="{{ url('list-siswa') }}">
+                                    <span class="menu-icon">
+                                        <i class="bi bi-calendar3-event fs-3"></i>
+                                    </span>
+                                    <span class="menu-title">Laporan Pendaftaran</span>
+                                </a>
+                            </div>
+                        </div>
+                        @endcan
+                        @can('admin')
+                        <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true">
+                            <div class="menu-item">
+                                <a class="menu-link {{request()->is('home') ? 'active' : ''}}" href="{{ url('home') }}">
+                                    <span class="menu-icon">
+                                        <i class="bi bi-calendar3-event fs-3"></i>
+                                    </span>
+                                    <span class="menu-title">Dashboard</span>
+                                </a>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-content pt-8 pb-2">
+                                    <span class="menu-section text-muted text-uppercase fs-8 ls-1">Menu</span>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <!-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                     <span class="menu-link">
                                         <span class="menu-icon">
                                             <i class="bi bi-layout-sidebar fs-3"></i>
@@ -109,17 +147,90 @@ License: For each use you must have a valid license purchased only from above li
                                                 <span class="menu-title">SPP</span>
                                             </a>
                                         </div>
-                                       
+
                                     </div>
-                                </div>
+                                </div> -->
+                                <a class="menu-link  {{request()->is('list-bayar') ? 'active' : ''}}" href="{{ url('list-bayar') }}">
+                                    <span class="menu-icon">
+                                        <i class="bi bi-calendar3-event fs-3"></i>
+                                    </span>
+                                    <span class="menu-title">List Pembayaran</span>
+                                </a>
                                 <a class="menu-link  {{request()->is('list-siswa') ? 'active' : ''}}" href="{{ url('list-siswa') }}">
                                     <span class="menu-icon">
                                         <i class="bi bi-calendar3-event fs-3"></i>
                                     </span>
-                                    <span class="menu-title">Pendaftaran</span>
+                                    <span class="menu-title">List Pendaftaran</span>
                                 </a>
                             </div>
                         </div>
+                        @endcan
+                        @can('siswa')
+                        <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true">
+                            <div class="menu-item">
+                                <a class="menu-link {{request()->is('home') ? 'active' : ''}}" href="{{ url('home') }}">
+                                    <span class="menu-icon">
+                                        <i class="bi bi-calendar3-event fs-3"></i>
+                                    </span>
+                                    <span class="menu-title">Dashboard</span>
+                                </a>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-content pt-8 pb-2">
+                                    <span class="menu-section text-muted text-uppercase fs-8 ls-1">Menu</span>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <!-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                    <span class="menu-link">
+                                        <span class="menu-icon">
+                                            <i class="bi bi-layout-sidebar fs-3"></i>
+                                        </span>
+                                        <span class="menu-title">Pembayaran</span>
+                                        <span class="menu-arrow"></span>
+                                    </span>
+                                    <div class="menu-sub menu-sub-accordion menu-active-bg">
+                                        <div class="menu-item">
+                                            <a class="menu-link" href="spp-nih">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">SPP</span>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div> -->
+
+                                <a class="menu-link  {{request()->is('list-siswa') ? 'active' : ''}}" href="#">
+                                    <span class="menu-icon">
+                                        <i class="bi bi-calendar3-event fs-3"></i>
+                                    </span>
+                                    <span class="menu-title">Pembayaran</span>
+                                </a>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-content pt-8 pb-2">
+                                    <span class="menu-section text-muted text-uppercase fs-8 ls-1">Setting</span>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <a class="menu-link" href="#">
+                                    <span class="menu-icon">
+                                        <i class="bi bi-calendar3-event fs-3"></i>
+                                    </span>
+                                    <span class="menu-title">Update Profil</span>
+                                </a>
+                                <a class="menu-link" href="#">
+                                    <span class="menu-icon">
+                                        <i class="bi bi-calendar3-event fs-3"></i>
+                                    </span>
+                                    <span class="menu-title">Ubah Password</span>
+                                </a>
+                            </div>
+                        </div>
+                        @endcan
                         <!--end::Menu-->
                     </div>
                 </div>
@@ -178,10 +289,11 @@ License: For each use you must have a valid license purchased only from above li
                                                 <!--end::Avatar-->
                                                 <!--begin::Username-->
                                                 <div class="d-flex flex-column">
-                                                    <div class="fw-bolder d-flex align-items-center fs-5">Max Smith
-                                                        <span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Pro</span>
+                                                    <div class="fw-bolder d-flex align-items-center fs-5">
+                                                        {{Auth::user()->name}}
+                                                        <span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Online</span>
                                                     </div>
-                                                    <a href="#" class="fw-bold text-muted text-hover-primary fs-7">max@kt.com</a>
+                                                    <a href="#" class="fw-bold text-muted text-hover-primary fs-7">{{Auth::user()->email}}</a>
                                                 </div>
                                                 <!--end::Username-->
                                             </div>
@@ -242,7 +354,7 @@ License: For each use you must have a valid license purchased only from above li
                 <!--end::Header-->
                 <!--begin::Content-->
                 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-                @yield('content')
+                    @yield('content')
                 </div>
                 <!--end::Content-->
                 <!--begin::Footer-->
@@ -2658,9 +2770,8 @@ License: For each use you must have a valid license purchased only from above li
                                     <!--end::Avatar-->
                                     <!--begin::Details-->
                                     <div class="ms-5">
-                                        <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Max
-                                            Smith</a>
-                                        <div class="fw-bold text-muted">max@kt.com</div>
+                                        <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Auth::user()->name</a>
+                                        <div class="fw-bold text-muted">Auth::user()->email</div>
                                     </div>
                                     <!--end::Details-->
                                 </div>
@@ -3361,9 +3472,8 @@ License: For each use you must have a valid license purchased only from above li
                                             <!--end::Avatar-->
                                             <!--begin::Details-->
                                             <div class="ms-5">
-                                                <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Max
-                                                    Smith</a>
-                                                <div class="fw-bold text-muted">max@kt.com</div>
+                                                <a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Auth::user()->name</a>
+                                                <div class="fw-bold text-muted">Auth::user()->email</div>
                                             </div>
                                             <!--end::Details-->
                                         </div>
