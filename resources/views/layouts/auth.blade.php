@@ -137,11 +137,7 @@ License: For each use you must have a valid license purchased only from above li
                                         </div>
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
-                                        <div class="menu-item">
-                                            <!--begin::Menu link-->
-                                            <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#pricing" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Pricing</a>
-                                            <!--end::Menu link-->
-                                        </div>
+
                                         <!--end::Menu item-->
                                     </div>
                                     <!--end::Menu-->
