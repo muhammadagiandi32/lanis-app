@@ -2,6 +2,7 @@
 // Print Mode
 //
 
+// Add .print-content-only class to body element in order to allow printing only the content area
 @media print {
     .print-content-only {
         padding: 0 !important;
@@ -9,6 +10,7 @@
 
         .wrapper,
         .page,
+        .page-title
         .content,
         .container,
         .container-xxl,
@@ -20,12 +22,11 @@
 
         .aside,
         .sidebar,
-        .sticky-toolbar,
         .scrolltop,
         .header,
         .footer,
         .toolbar,
-        .offcanvas,
+        .drawer,
         .btn {
             display: none !important;
         }

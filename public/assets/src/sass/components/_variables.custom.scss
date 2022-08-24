@@ -4,17 +4,11 @@
 // are not accessible in this file but you can override any global variable as shown below:
 //
 
-// Border radius
-$enable-rounded:                                    false !default;
-$border-radius:                                     0 !default;
-$border-radius-sm:                                  0 !default;
-$border-radius-lg:                                  0 !default;
-
 // Theme colors
 // Primary
 $primary:       									if(isDarkMode(), #3699FF, #009EF7);
 $primary-active:    								if(isDarkMode(), #187DE4, #0095E8);
-$primary-light:    								    if(isDarkMode(), #212E48, #ECF8FF);
+$primary-light:    								    if(isDarkMode(), #212E48, #F1FAFF);
 $primary-inverse:  									#FFFFFF;
 
 // Success
@@ -40,3 +34,4 @@ $warning:       									if(isDarkMode(), #FFA800, #FFC700);
 $warning-active:    								if(isDarkMode(), #EE9D01, #F1BC00);
 $warning-light:    									if(isDarkMode(), #392F28, #FFF8DD);
 $warning-inverse:  									#FFFFFF;
+

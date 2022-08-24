@@ -7,9 +7,9 @@
 	.content {
 		padding: get($content-spacing, desktop) 0;
 
-		// toolbar enabled & toolbar not fixed modes
+		// Toolbar enabled and toolbar not fixed mode
 		.toolbar-enabled:not(.toolbar-fixed) & {
-			padding-top: get($content-spacing-toolbar, desktop);
+			padding-top: 0;
 		}
 	}
 }
@@ -19,9 +19,9 @@
 	.content {
 		padding: get($content-spacing, tablet-and-mobile) 0;
 
-		// toolbar enabled & toolbar not fixed modes
+		// Toolbar enabled mode and toolbar not fixed mode
 		.toolbar-enabled:not(.toolbar-tablet-and-mobile-fixed) & {
-			padding-bottom: get($content-spacing-toolbar, tablet-end-mobile);
+			padding-top: 0;
 		}
 	}
 }
