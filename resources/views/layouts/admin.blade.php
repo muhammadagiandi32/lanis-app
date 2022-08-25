@@ -104,6 +104,12 @@ License: For each use you must have a valid license purchased only from above li
                                     </span>
                                     <span class="menu-title">Laporan Pembayaran</span>
                                 </a>
+                                <a class="menu-link  {{request()->is('list-siswa') ? 'active' : ''}}" href="{{ url('list-siswa') }}">
+                                    <span class="menu-icon">
+                                        <i class="bi bi-calendar3-event fs-3"></i>
+                                    </span>
+                                    <span class="menu-title">Laporan Pendaftaran</span>
+                                </a>
                             </div>
                         </div>
                         @endcan
@@ -124,11 +130,11 @@ License: For each use you must have a valid license purchased only from above li
                             </div>
 
                             <div class="menu-item">
-                                <a class="menu-link  {{request()->is('list-bayar') ? 'active' : ''}}" href="{{ url('list-bayar') }}">
+                                <a class="menu-link  {{request()->is('createPayment') ? 'active' : ''}}" href="{{ url('createPayment') }}">
                                     <span class="menu-icon">
                                         <i class="bi bi-calendar3-event fs-3"></i>
                                     </span>
-                                    <span class="menu-title">List Pembayaran</span>
+                                    <span class="menu-title">Tambah Pembayaran</span>
                                 </a>
                                 <a class="menu-link  {{request()->is('list-siswa') ? 'active' : ''}}" href="{{ url('list-siswa') }}">
                                     <span class="menu-icon">
@@ -4052,7 +4058,6 @@ License: For each use you must have a valid license purchased only from above li
                                 </div>
                                 <!--begin::Form-->
                                     <div class="card-body py-3">
-                                            ` + console.log() + `
                                         <div class="form-group">
                                             <label>Jumlah Tagihan</label>
                                             <div class="input-group">

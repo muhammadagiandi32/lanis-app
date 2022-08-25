@@ -122,6 +122,7 @@
                                     <td>
                                         <span class="badge badge-light-success">{{$siswa->kelas}}</span>
                                     </td>
+
                                     <td class="text-end">
                                         <a href="{{ url('siswas/'.$siswa->id.'/edit') }}" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
