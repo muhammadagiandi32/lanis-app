@@ -12,7 +12,7 @@ class PaymentController extends Controller
     //
     public function index()
     {
-        $data = Tagihan::select('*')->get();
+        $data = Tagihan::select('*')->where('status', '=', 0)->get();
         return view('payment', ['data' => $data]);
     }
 
