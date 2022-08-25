@@ -1,4 +1,4 @@
-@extends('layouts.appp')
+@extends('layouts.admin')
 
 @section('content')
 <div class="row gy-5 g-xl-8">
@@ -37,7 +37,8 @@
                 <!--begin::Table container-->
                 <div class="table-responsive">
                     <!--begin::Table-->
-                    <form id="form_payment_buku" method="POST" action="{{ url('/snaptokenBuku') }}">
+                    <form id="form_payment_buku" method="POST" action="{{ url('/insertPembayaran') }}">
+                        @csrf
                         <table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4"
                             id="table_payment">
                             <!--begin::Table head-->

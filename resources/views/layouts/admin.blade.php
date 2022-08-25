@@ -4702,7 +4702,7 @@ License: For each use you must have a valid license purchased only from above li
 						var form = this;
 						$.ajax({
 							type: 'POST',
-							url: '/snaptokenBuku',
+							url: '/insertPembayaran',
 							headers: {
 								'CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 							},

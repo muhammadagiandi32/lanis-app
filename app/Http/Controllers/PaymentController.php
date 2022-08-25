@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Tagihan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
@@ -63,7 +64,7 @@ class PaymentController extends Controller
             //    'total_bayar' => $request->total,
             //     'status' => 1
             // ]; 
-            DB::table('tagihan_bukus')->where('id', $data)->update(['order_id' => $id_transaksi]);
+            DB::table('tagihans')->where('id', $data)->update(['order_id' => $id_transaksi]);
         }
 
         // DB::table('tagihan_bukus')->where('id', $data)->update(['order_id' => $id_transaksi]);
@@ -94,5 +95,13 @@ class PaymentController extends Controller
         $snapToken = \Midtrans\Snap::getSnapToken($params);
 
         return response()->json(['snaptoken' => $snapToken]);
+    }
+
+    public function callBack(Request $request)
+    {
+        DB::table('tagihans')
+            ->where('order_id', $request->order_id)
+            ->update(['status' => 1]);
+        return "Ada isi" . $request;
     }
 }
