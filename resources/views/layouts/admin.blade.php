@@ -98,7 +98,7 @@ License: For each use you must have a valid license purchased only from above li
                                     </span>
                                     <span class="menu-title">Tambah Admin</span>
                                 </a>
-                                <a class="menu-link  {{request()->is('list-bayar') ? 'active' : ''}}" href="{{ url('list-bayar') }}">
+                                <a class="menu-link  {{request()->is('laporans') ? 'active' : ''}}" href="{{ url('laporans') }}">
                                     <span class="menu-icon">
                                         <i class="bi bi-calendar3-event fs-3"></i>
                                     </span>

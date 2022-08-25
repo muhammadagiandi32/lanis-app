@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Siswa;
+use App\Models\Tagihan;
 use Illuminate\Http\Request;
 
 class LaporanController extends Controller
@@ -14,15 +15,12 @@ class LaporanController extends Controller
      */
     public function index()
     {
-        $siswas = Siswa::select('*', 'siswas.id as id_siswa')
-            ->leftjoin('users', 'siswas.user_id', 'users.id')
-            ->where('role_id', '=', 3)
-            ->paginate(15);
+        $laporans = Tagihan::all();
         // ->get();
 
-        // return $siswas;
+        // return $laporans;
 
-        return view('admin.siswa.index', compact('siswas'));
+        return view('laporan.laporan-pembayaran', compact('laporans'));
     }
 
     /**

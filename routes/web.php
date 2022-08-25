@@ -45,3 +45,5 @@ Route::patch('account/password', [App\Http\Controllers\Account\PasswordControlle
 //untuk siswa
 Route::resource('/siswas', App\Http\Controllers\SiswaController::class);
 Route::get('/dashboard.siswa', [App\Http\Controllers\SiswaController::class, 'dashboard'])->name('siswa');
+//laporan pembayaran
+Route::resource('/laporans', App\Http\Controllers\LaporanController::class);
