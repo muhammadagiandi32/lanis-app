@@ -104,12 +104,6 @@ License: For each use you must have a valid license purchased only from above li
                                     </span>
                                     <span class="menu-title">Laporan Pembayaran</span>
                                 </a>
-                                <a class="menu-link  {{request()->is('list-siswa') ? 'active' : ''}}" href="{{ url('list-siswa') }}">
-                                    <span class="menu-icon">
-                                        <i class="bi bi-calendar3-event fs-3"></i>
-                                    </span>
-                                    <span class="menu-title">Laporan Pendaftaran</span>
-                                </a>
                             </div>
                         </div>
                         @endcan
@@ -235,7 +229,7 @@ License: For each use you must have a valid license purchased only from above li
                                 <div class="d-flex align-items-stretch" id="kt_header_user_menu_toggle">
                                     <!--begin::Menu wrapper-->
                                     <div class="topbar-item cursor-pointer symbol px-3 px-lg-5 me-n3 me-lg-n5 symbol-30px symbol-md-35px" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end" data-kt-menu-flip="bottom">
-                                        <img src="{{ asset('assets/dist/assets/media/avatars/300-1.jpg')}}" alt="metronic" />
+                                        <img src="{{ asset('assets/dist/assets/media/avatars/blank.png')}}" alt="metronic" />
                                     </div>
                                     <!--begin::User account menu-->
                                     <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px" data-kt-menu="true">
@@ -244,7 +238,7 @@ License: For each use you must have a valid license purchased only from above li
                                             <div class="menu-content d-flex align-items-center px-3">
                                                 <!--begin::Avatar-->
                                                 <div class="symbol symbol-50px me-5">
-                                                    <img alt="Logo" src="{{ asset('assets/dist/assets/media/avatars/300-1.jpg')}}" />
+                                                    <img alt="Logo" src="{{ asset('assets/dist/assets/media/avatars/blank.png')}}" />
                                                 </div>
                                                 <!--end::Avatar-->
                                                 <!--begin::Username-->
@@ -263,6 +257,7 @@ License: For each use you must have a valid license purchased only from above li
                                         <div class="separator my-2"></div>
                                         <!--end::Menu separator-->
                                         <!--begin::Menu item-->
+                                        @can('siswa')
                                         <div class="menu-item px-5">
                                             <a href="{{ route('siswa')}}" class="menu-link px-5">My
                                                 Profile</a>
@@ -275,10 +270,12 @@ License: For each use you must have a valid license purchased only from above li
                                         <div class="separator my-2"></div>
                                         <!--end::Menu separator-->
 
+
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-5 my-1">
                                             <a href="{{route('password.edit')}}" class="menu-link px-5">Ubah Password</a>
                                         </div>
+                                        @endcan
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-5">
