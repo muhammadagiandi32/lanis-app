@@ -52,7 +52,9 @@
                                 <td>{{$dt->jenis_kelamin}}</td>
                                 <td>{{$dt->tgl_lahir}}</td>
                                 <td>{{$dt->nama_sekolah}}</td>
-                                <td>{{$dt->status}}</td>
+                                <td>
+                                    <span class="badge badge-light-primary">{{$dt->status}}</span>
+                                </td>
                                 <td>
                                     <a href="{{ route('status',$dt->id) }}" class="badge badge-success btn-sm">Approve</a>
                                 </td>
