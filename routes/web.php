@@ -30,10 +30,3 @@ Route::post('/tambah-siswa', [App\Http\Controllers\PendaftaranController::class,
 
 //admin
 Route::resource('/admins', App\Http\Controllers\AdminController::class);
-
-// Untuk Payment 
-Route::get('/payment', [App\Http\Controllers\PaymentController::class, 'index']);
-Route::get('/createPayment', [App\Http\Controllers\PaymentController::class, 'createPayment']);
-Route::post('/insertTagihans', [App\Http\Controllers\PaymentController::class, 'insertTagihans']);
-Route::get('/tagihan', [App\Http\Controllers\PaymentController::class, 'tagihan']);
-Route::post('/insertPembayaran', [App\Http\Controllers\PaymentController::class, 'insertPembayaran']);

@@ -249,7 +249,7 @@ License: For each use you must have a valid license purchased only from above li
                                     </span>
                                     <span class="menu-title">Update Profil</span>
                                 </a>
-                                <a class="menu-link" href="#">
+                                <a class="menu-link" href="{{route('password.edit')}}">
                                     <span class="menu-icon">
                                         <i class="bi bi-calendar3-event fs-3"></i>
                                     </span>
@@ -321,8 +321,7 @@ License: For each use you must have a valid license purchased only from above li
                                             <div class="menu-content d-flex align-items-center px-3">
                                                 <!--begin::Avatar-->
                                                 <div class="symbol symbol-50px me-5">
-                                                    <img alt="Logo"
-                                                        src="{{ asset('assets/dist/assets/media/avatars/300-1.jpg')}}" />
+                                                    <img alt="Logo" src="{{ asset('assets/dist/assets/media/avatars/300-1.jpg')}}" />
                                                 </div>
                                                 <!--end::Avatar-->
                                                 <!--begin::Username-->
@@ -3162,7 +3161,7 @@ License: For each use you must have a valid license purchased only from above li
                                 <div class="d-flex align-items-center">
                                     <!--begin::Avatar-->
                                     <div class="symbol symbol-35px symbol-circle">
-                                        <img alt="Pic" src="assets/media/avatars/300-1.jpg" />
+                                        <img alt="Pic" src="{{ asset('assets/dist/assets/media/avatars/300-20.jpg')}}" />
                                     </div>
                                     <!--end::Avatar-->
                                     <!--begin::Details-->
@@ -3912,7 +3911,7 @@ License: For each use you must have a valid license purchased only from above li
                                             <!--end::Checkbox-->
                                             <!--begin::Avatar-->
                                             <div class="symbol symbol-35px symbol-circle">
-                                                <img alt="Pic" src="assets/media/avatars/300-1.jpg" />
+                                                <img alt="Pic" src="{{ asset('assets/dist/assets/media/avatars/300-1.jpg')}}" />
                                             </div>
                                             <!--end::Avatar-->
                                             <!--begin::Details-->
