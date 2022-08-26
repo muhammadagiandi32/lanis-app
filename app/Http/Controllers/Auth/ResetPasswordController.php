@@ -27,4 +27,11 @@ class ResetPasswordController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
+
+    // protected function redirectTo()
+    // {
+    //     return redirect('/home')->with('success',
+    //         'Selemat Password anda telah dirubah'
+    //     );
+    // }
 }

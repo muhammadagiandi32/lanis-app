@@ -38,6 +38,7 @@ License: For each use you must have a valid license purchased only from above li
     <link href="{{ asset('assets/dist/assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/dist/assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
+    @yield('css')
 </head>
 <!--end::Head-->
 <!--begin::Body-->
